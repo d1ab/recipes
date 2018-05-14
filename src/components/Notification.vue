@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-alert v-for="(notification, index) of notifications" :key="index"
-                 :show="5"
+                 :show="DEFAULT_TIMEOUT"
                  dismissible
                  v-bind:variant="notification.type">
             {{notification.message}}
@@ -20,6 +20,7 @@
 
     @Component
     export default class Notification extends Vue {
+        public DEFAULT_TIMEOUT = 5; //secs
 
         get notifications(): INotification[] {
             return getNotifications(this.$store);

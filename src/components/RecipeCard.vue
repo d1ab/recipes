@@ -41,10 +41,9 @@
         props: {
             recipeItem: Object,
             isFavorite: Boolean,
-            isFavoriteView: Boolean
-            // onFavoriteRecipeAdd: Event
+            isFavoriteView: Boolean,
         }
-    }) //functional component?
+    })
     export default class RecipeCard extends Vue {
         @Prop() recipeItem!: IRecipeOverviewItem;
 
