@@ -6,7 +6,7 @@
       <router-link to="/add">Add new</router-link> {{isAuthenticated ? "|" : ""}}
       <a v-if="isAuthenticated" @click="logout()">Logout</a>
     </div>
-    <div class="logo">
+    <div class="header-section">
       <Notification/>
       <img src="./assets/logo.png">
     </div>
@@ -88,7 +88,7 @@
   }
 }
 
-.logo {
+.header-section {
   display: block;
   margin-bottom: 20px;
 }

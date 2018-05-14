@@ -1,33 +1,35 @@
 <template>
-    <b-card v-bind:title="recipeItem.title"
-            v-bind:img-src="recipeItem.thumbnail"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-4">
-        <p class="card-text truncate"
-           v-b-tooltip.hover v-bind:title="recipeItem.ingredients">
-            <b>Ingredients:</b> {{recipeItem.ingredients}}
-        </p>
+    <div class="card__container">
+        <b-card v-bind:title="recipeItem.title"
+                v-bind:img-src="recipeItem.thumbnail"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-4">
+            <p class="card-text card-body__truncate"
+               v-b-tooltip.hover v-bind:title="recipeItem.ingredients">
+                <b>Ingredients:</b> {{recipeItem.ingredients}}
+            </p>
 
-        <b-col>
-            <a v-bind:href="recipeItem.href">
-                Original recipe
-            </a>
-        </b-col>
-        <b-col>
-            <b-button v-if="!isFavoriteView"
-                      v-bind:disabled="recipeItem.isFavorite"
-                      @click="onFavoriteRecipeAdd(recipeItem.recipeId)">
-                {{recipeItem.isFavorite ? 'Already added!' : 'Add to favorite'}}
-            </b-button>
-            <b-button v-if="isFavoriteView"
-                      @click="onFavoriteRecipeRemove(recipeItem.recipeId)">
-                Remove from fav
-            </b-button>
-        </b-col>
-    </b-card>
+            <b-col>
+                <a v-bind:href="recipeItem.href">
+                    Original recipe
+                </a>
+            </b-col>
+            <b-col>
+                <b-button v-if="!isFavoriteView"
+                          v-bind:disabled="recipeItem.isFavorite"
+                          @click="onFavoriteRecipeAdd(recipeItem.recipeId)">
+                    {{recipeItem.isFavorite ? 'Already added!' : 'Add to favorite'}}
+                </b-button>
+                <b-button v-if="isFavoriteView"
+                          @click="onFavoriteRecipeRemove(recipeItem.recipeId)">
+                    Remove from fav
+                </b-button>
+            </b-col>
+        </b-card>
+    </div>
 </template>
 
 <script lang="ts">
@@ -58,26 +60,32 @@
     }
 </script>
 
-<style scoped>
-    .card-img-top {
-        width: auto;
+<style scoped lang="scss">
+    .card__container {
+        h4 {
+            min-height: 55px;
+        }
+
+        img {
+            margin-top: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        //overlap bootstrap class
+        .card-img-top {
+            width: auto;
+        }
+
+        .card-body {
+            .card-body__truncate {
+                width: 250px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
     }
 
-    .truncate {
-        width: 250px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    h4 {
-        min-height: 55px;
-    }
-
-    img {
-        margin-top: 30px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
 </style>
