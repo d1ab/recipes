@@ -55,14 +55,6 @@ export const recipesOverview = {
             state.favoriteRecipes.push(favoriteRecipe);
 
             _mutateRecipeItemFavoriteState(state.overviewItems, favoriteRecipe.recipeId, true);
-
-            function _mutateRecipeItemFavoriteState(recipes: IRecipeOverviewItem[], recipeId: number, isFavorite: boolean) {
-                recipes.forEach(item => {
-                    if (item.recipeId === recipeId) {
-                        item.isFavorite = isFavorite;
-                    }
-                });
-            }
         },
 
         removeFromFavorites(state: IRecipeOverview, favoriteRecipeId: number) {

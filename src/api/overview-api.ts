@@ -1,9 +1,7 @@
-
-import Vue from "vue";
 import {AxiosStatic} from "axios";
 import {IRecipeOverviewItem} from "@/types";
 
-export class OverviewApi extends Vue {
+export class OverviewApi {
     public static getRecipes($http: AxiosStatic) {
         return $http.get<IRecipeOverviewItem[]>('/recipes')
             .then(response => response.data)

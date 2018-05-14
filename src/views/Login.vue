@@ -36,10 +36,9 @@
     } from "@/store/modules/notification.module";
     import {AlertType} from "@/types";
 
-    @Component({
-        domStreams: ['userName$'],
-    })
+    @Component
     export default class Login extends Vue {
+        // for simplicity used 2-way binding
         public userName = '';
         public password!: string;
 
