@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "mmichalski",
+      "uuid": "cb232b01-30d9-4a79-8017-b1972e84ad62"
+    },
+    {
+      "id": 2,
+      "userName": "psalamucha",
+      "uuid": "60b77ce1-8bc1-40a9-b3b0-875b7790bc9b"
+    }
+  ],
+  "recipes": [],
+  "favorites": []
+}
